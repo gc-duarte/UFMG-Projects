@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {	    
+      "label": "C Compile Project",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-c",
+        "-I",
+        "Project/include",
+        "Project/src/main.c",
+        "-o",
+        "Project/build/main.o",
+        ";",
+        "gcc",
+        "-c",
+        "-I",
+        "Project/include",
+        "Project/src/ordering.c",
+        "-o",
+        "Project/build/ordering.o",
+        ";",
+        "gcc",
+        "Project/build/main.o",
+        "Project/build/ordering.o",
+        "-o",
+        "Project/executable/testFile"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "C Excecute Task",
+      "type": "shell",
+      "command": "Project/executable/testFile",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
